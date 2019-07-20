@@ -20,6 +20,7 @@ script:
 
 deploy:
   provider: npm
+  email: emdobryanskaya@gmail.com
   api_key: $NPM_TOKEN
   on:
     tags: true
