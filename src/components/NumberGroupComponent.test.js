@@ -20,7 +20,7 @@ test('is created correctly', () => {
             expect(element.value).toBe(info.value);
         });
     });
-})
+});
 
 test('DOM elements created correctly', () => {
     masks.forEach(mask => {
@@ -37,7 +37,7 @@ test('DOM elements created correctly', () => {
         expect(wrapper.childElementCount).toBe(props.mask.length);
         expect(msg).not.toBeNull();
     });
-})
+});
 
 test('Correct error processing', () => {
     masks.forEach(mask => {
@@ -55,7 +55,7 @@ test('Correct error processing', () => {
         if (inputs.length > 0) {
             for (let index = 0; index < inputs.length; index++) {
                 inputs[index].value = index;
-            };
+            }
             expect(container.classList).not.toContain(CLASSES.CONTAINER_ERROR);
     
             inputs[0].value = 'a';
@@ -64,4 +64,4 @@ test('Correct error processing', () => {
             expect(msg.innerHTML).not.toEqual('');
         }
     });
-})
+});

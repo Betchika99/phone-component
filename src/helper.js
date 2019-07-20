@@ -4,7 +4,7 @@ const SYMBOLS = ['+', '-', '(', ')'];
 
 export const MESSAGES = {
     INCORRECT_NUMBER: 'Неверный номер, попробуйте еще раз',
-}
+};
 
 export const CLASSES = {
     CONTAINER: 'container',
@@ -16,7 +16,7 @@ export const CLASSES = {
     SYMBOL: 'wrapper__symbol',
     CONTAINER_ERROR: 'container__error',
     ERROR_MSG: 'container__message'
-}
+};
 
 export const TYPES = {
     INPUT: {

@@ -1,5 +1,5 @@
 {
-  "name": "test_mailru",
+  "name": "phone-component",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -9,7 +9,9 @@
     "prestart": "npm run dev",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch --progress"
+    "watch": "webpack --mode development --watch --progress",
+    "linter": "eslint -c .eslintrc.json './**/*.js'",
+    "linter-fix": "npx eslint -c .eslintrc.json './**/*.js' --fix"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,8 @@
     "@babel/preset-env": "^7.5.5",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.8.0",
     "source-map-loader": "^0.2.4",
     "webpack": "^4.35.2",

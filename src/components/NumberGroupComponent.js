@@ -26,7 +26,7 @@ export default class NumberGroupComponent {
         const wrapper = document.createElement('div');
         wrapper.classList.add(CLASSES.WRAPPER);
 
-        this._inputs = this.data.filter(element => element.value === 'I')
+        this._inputs = this.data.filter(element => element.value === 'I');
         this._inputs.map((element, index) => {
             element.onRender = (domElement) => {
                 domElement.addEventListener('input', () => this.check());
@@ -58,7 +58,7 @@ export default class NumberGroupComponent {
                 isEmpty = true;
                 break;
             }
-        };
+        }
         
         let isCorrect = true;
         let message = '';

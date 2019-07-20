@@ -9,10 +9,10 @@ const  PATHS  =  {
 module.exports = {
     // mode: "production",
     mode:  'development',
-    devtool: "source-map",
+    devtool: 'source-map',
     entry: `${PATHS.src}/main.js`,
     resolve: {
-        extensions: [".js"]
+        extensions: ['.js']
     },
 
     module: {
@@ -22,14 +22,14 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: "babel-loader"
+                        loader: 'babel-loader'
                     }
                 ]
             },
             {
-                enforce: "pre",
+                enforce: 'pre',
                 test: /\.js$/,
-                loader: "source-map-loader"
+                loader: 'source-map-loader'
             }
         ]
     },
