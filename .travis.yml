@@ -17,3 +17,9 @@ script:
   - npm run linter
   - npm run test
   - curl -I http://127.0.0.1:3001
+
+deploy:
+  provider: npm
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
