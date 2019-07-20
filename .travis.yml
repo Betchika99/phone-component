@@ -9,7 +9,6 @@ services:
   - docker
 
 before_script:
-  - npm i
   - docker build -t phone-component .
   - docker run -d --rm --name phone-component -p 3001:3001 phone-component 
   - docker ps -a
@@ -17,3 +16,4 @@ before_script:
 script:
   - npm run linter
   - npm run test
+  - curl -I http://127.0.0.1:3001

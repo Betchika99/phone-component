@@ -59,7 +59,7 @@ test('Correct error processing', () => {
             expect(container.classList).not.toContain(CLASSES.CONTAINER_ERROR);
     
             inputs[0].value = 'a';
-            //component.check();
+            component.check();
             expect(container.classList).toContain(CLASSES.CONTAINER_ERROR);
             expect(msg.innerHTML).not.toEqual('');
         }
