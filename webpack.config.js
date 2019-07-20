@@ -7,7 +7,7 @@ const  PATHS  =  {
 };
 
 module.exports = {
-    // mode: "production",
+    // mode: 'production',
     mode:  'development',
     devtool: 'source-map',
     entry: `${PATHS.src}/main.js`,

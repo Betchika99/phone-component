@@ -1,0 +1,19 @@
+sudo: false
+language: node_js
+
+cache: false
+node_js: 
+  - "10"
+
+services: 
+  - docker
+
+before_script:
+  - npm i
+  - docker build -t phone-component .
+  - docker run -d --rm --name phone-component -p 3001:3001 phone-component 
+  - docker ps -a
+  
+script:
+  - npm run linter
+  - npm run test

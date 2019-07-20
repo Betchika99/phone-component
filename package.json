@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "test": "jest",
-    "prestart": "npm run dev",
+    "prestart": "npm run build",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch --progress",
