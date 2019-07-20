@@ -1,14 +1,22 @@
 export default class NumberComponent {
-    constructor(type) {
-        this._value = type.value;
-        this._type = type.type;
-        this._class = type.class;
+    constructor(info) {
+        this._value = info.value;
+        this._type = info.type;
+        this._class = info.class;
         this._onRender = null;
         this._tag = null;
     }
 
+    get class() {
+        return this._class;
+    }
+
     get value() {
         return this._value;
+    }
+
+    get type() {
+        return this._type;
     }
 
     get domElement() {

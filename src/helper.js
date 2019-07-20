@@ -12,7 +12,7 @@ export const CLASSES = {
     CONTAINER_ERROR: 'container__error',
 }
 
-const TYPES = {
+export const TYPES = {
     INPUT: {
         value: 'I',
         type: 'input',
