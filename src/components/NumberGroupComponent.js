@@ -1,5 +1,5 @@
 import NumberComponent from './NumberComponent';
-import { getType, CLASSES } from '../helper';
+import { getType, CLASSES, MESSAGES } from '../helper';
 
 export default class NumberGroupComponent {
     constructor(props) {
@@ -13,19 +13,27 @@ export default class NumberGroupComponent {
                 // TODO: debug error
             }
         });
+        this._tag = null;
     }
 
-    render(container) {
+    get domElement() {
+        return this._tag;
+    }
+
+    render(parent) {
+        this._tag = document.createElement('div');
+        this._tag.classList.add(CLASSES.CONTAINER);
         const wrapper = document.createElement('div');
         wrapper.classList.add(CLASSES.WRAPPER);
 
-        this.data.filter(element => element.value === 'I').map((element, index, inputs) => {
+        this._inputs = this.data.filter(element => element.value === 'I')
+        this._inputs.map((element, index) => {
             element.onRender = (domElement) => {
-                domElement.addEventListener('input', () => this.check(wrapper, inputs));
-                if (index !== inputs.length - 1) {
+                domElement.addEventListener('input', () => this.check());
+                if (index !== this._inputs.length - 1) {
                     domElement.addEventListener('input', () => { 
                         if (domElement.value) {
-                            inputs[index + 1].domElement.focus();
+                            this._inputs[index + 1].domElement.focus();
                         }
                     });
                 }
@@ -35,25 +43,43 @@ export default class NumberGroupComponent {
         this.data.forEach(symbol => {
             symbol.render(wrapper);
         });
-        container.appendChild(wrapper);
+
+        const errorMessage = document.createElement('div');
+        errorMessage.classList.add(CLASSES.ERROR_MSG);
+        this._tag.appendChild(wrapper);
+        this._tag.appendChild(errorMessage);
+        parent.appendChild(this._tag);
     }
 
-    check(parent, inputs) {
+    check() {
         let isEmpty = false;
-        for (let input of inputs) {
+        for (let input of this._inputs) {
             if (!input.domElement.value) {
                 isEmpty = true;
                 break;
             }
         };
         
-        let isCorrect = false;
-        // TODO: add REAL checking
-            
+        let isCorrect = true;
+        let message = '';
+        if (!isEmpty) {
+            // TODO: add REAL checking
+            for (let input of this._inputs ) {
+                if (!Number.isInteger(+input.domElement.value)) {
+                    isCorrect = false;
+                    break;
+                }
+            }
+        }
+        if (!isCorrect) {
+            message = MESSAGES.INCORRECT_NUMBER;
+        }
+
         if (isCorrect || isEmpty) {
-            parent.classList.remove(CLASSES.CONTAINER_ERROR);
+            this._tag.classList.remove(CLASSES.CONTAINER_ERROR);
         } else {
-            parent.classList.add(CLASSES.CONTAINER_ERROR);
+            this._tag.getElementsByClassName(CLASSES.ERROR_MSG)[0].textContent = message;
+            this._tag.classList.add(CLASSES.CONTAINER_ERROR);
         }
     }
 }

@@ -47,6 +47,6 @@ test('incorrect input values', () => {
     const symbols = [' ', 'a', 'B', '~', '=', ',', '.']
     
     symbols.forEach(symbol => {
-        expect(getType(symbol)).toBe(null);
+        expect(getType(symbol)).toBeNull();
     });
 })

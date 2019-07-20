@@ -2,14 +2,20 @@ const NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 const SYMBOLS = ['+', '-', '(', ')'];
 
+export const MESSAGES = {
+    INCORRECT_NUMBER: 'Неверный номер, попробуйте еще раз',
+}
+
 export const CLASSES = {
-    WRAPPER: 'container',
-    INPUT: 'container__input',
-    X: 'container__symbol-x',
-    DOT: 'container__symbol-dot',
-    NUMBER: 'container__number',
-    SYMBOL: 'container__symbol',
+    CONTAINER: 'container',
+    WRAPPER: 'container__wrapper',
+    INPUT: 'wrapper__input',
+    X: 'wrapper__symbol-x',
+    DOT: 'wrapper__symbol-dot',
+    NUMBER: 'wrapper__number',
+    SYMBOL: 'wrapper__symbol',
     CONTAINER_ERROR: 'container__error',
+    ERROR_MSG: 'container__message'
 }
 
 export const TYPES = {
