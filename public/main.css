@@ -61,12 +61,12 @@
     text-align: center;
 }
 
-.wrapper__input:hover {
+.wrapper__input:hover, .wrapper__input__hover {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.24);
 }
 
-.wrapper__input:focus {
+.wrapper__input:focus, .wrapper__input__focus {
     outline: none;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.48);
