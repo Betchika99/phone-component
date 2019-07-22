@@ -1,0 +1,52 @@
+@import '../helper/helper.scss';
+
+.wrapper {
+    &__symbol {
+        margin: 2px 0;
+    }
+
+    &__number, &__symbol-dot {
+        width: 25px;
+        height: 32px;
+    
+        background: $color-darkwhite;
+        border-radius: 2px;
+    }
+
+    &__input {
+        width: 25px;
+        height: 32px;
+    
+        background: $color-white;
+        border: 1px solid $color-black;
+        box-sizing: border-box;
+        border-radius: 2px;
+    
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: $color-lightblack;
+        padding: 6px;
+
+        &::placeholder {
+            color: $color-gray;
+            font-size: 20px;
+        }
+
+        &:not(:placeholder-shown) {
+            text-align: center;
+        }
+
+        &:hover, &__hover {
+            background: $color-white;
+            border: 1px solid $color-extrablack;
+        }
+
+        &:focus, &__focus {
+            outline: none;
+            background: $color-white;
+            border: 1px solid $color-moreblack;
+        }
+    }
+}

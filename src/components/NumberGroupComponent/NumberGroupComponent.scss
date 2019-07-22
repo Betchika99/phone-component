@@ -1,0 +1,56 @@
+@import '../helper/helper.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    &__wrapper {
+        display: flex;
+    
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 32px;
+        text-align: center;
+        color: $color-lightblack;
+
+        & > *:not(.wrapper__symbol) {
+            margin: 2px;
+        }
+    }
+
+    &__message {
+        display: none;
+    
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 20px;
+        color: $color-red;
+    }
+
+    &__error .wrapper__input {
+        width: 25px;
+        height: 32px;
+    
+        background: $color-white;
+        border: 1px solid $color-red;
+        box-sizing: border-box;
+        border-radius: 2px;
+        outline: none;
+    
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        text-align: center;
+        color: $color-lightblack;
+    }
+
+    &__error .container__message {
+        display: block;
+        margin-top: 4px;
+    }
+}

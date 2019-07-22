@@ -1,4 +1,5 @@
-import NumberGroupComponent from './components/NumberGroupComponent';
+import NumberGroupComponent from './components/NumberGroupComponent/NumberGroupComponent';
+import './main.scss';
 
 const props = {
     mask: '+7(985)0II-**-**',

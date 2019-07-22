@@ -1,5 +1,5 @@
-import NumberComponent from './NumberComponent';
-import { getType, CLASSES, MESSAGES } from '../helper';
+import NumberComponent from '../NumberComponent/NumberComponent';
+import { getType, CLASSES, MESSAGES } from '../helper/helper';
 
 export default class NumberGroupComponent {
     constructor(props) {

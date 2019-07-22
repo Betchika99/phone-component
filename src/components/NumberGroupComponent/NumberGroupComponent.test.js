@@ -1,5 +1,5 @@
 import NumberGroupComponent from './NumberGroupComponent';
-import { getType, CLASSES } from '../helper';
+import { getType, CLASSES } from '../helper/helper';
 
 const masks = [
     '+7(900)III-**-**',

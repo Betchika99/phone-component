@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require ('extract-text-webpack-plugin');
 const path = require('path');
 
 const  PATHS  =  {
@@ -30,7 +31,15 @@ module.exports = {
                 enforce: 'pre',
                 test: /\.js$/,
                 loader: 'source-map-loader'
-            }
+            },
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract(
+                    {
+                        fallback: 'style-loader',
+                        use: ['css-loader', 'sass-loader']
+                    })
+            }, 
         ]
     },
 
@@ -45,5 +54,6 @@ module.exports = {
             template: './public/index.html',
             inject: false,
         }),
+        new ExtractTextPlugin({ filename: 'bundle.css' }),
     ],
 };

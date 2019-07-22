@@ -1,6 +1,6 @@
 import { document } from 'global';
 import { storiesOf } from '@storybook/html';
-import NumberGroupComponent from '../src/components/NumberGroupComponent';
+import NumberGroupComponent from '../src/components/NumberGroupComponent/NumberGroupComponent';
 import '../public/main.css';
 
 storiesOf('Phone component', module)

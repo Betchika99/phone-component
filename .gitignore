@@ -2,4 +2,6 @@ node_modules
 package-lock.json
 bundle.js
 bundle.js.map
+bundle.css
+bundle.css.map
 .DS_Store
