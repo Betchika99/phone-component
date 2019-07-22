@@ -1,7 +1,7 @@
 import { document } from 'global';
 import { storiesOf } from '@storybook/html';
 import NumberGroupComponent from '../src/components/NumberGroupComponent/NumberGroupComponent';
-import '../public/main.css';
+import '../src/main.scss';
 
 storiesOf('Phone component', module)
     .add('normal', () => {
