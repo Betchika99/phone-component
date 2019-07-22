@@ -65,7 +65,7 @@ export default class NumberGroupComponent {
         if (!isEmpty) {
             // TODO: add REAL checking
             for (let input of this._inputs ) {
-                if (!Number.isInteger(+input.domElement.value)) {
+                if (!Number.isInteger(+input.domElement.value || input.domElement.value === ' ')) {
                     isCorrect = false;
                     break;
                 }
