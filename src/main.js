@@ -1,7 +1,7 @@
-import NumberGroupComponent from './components/NumberGroupComponent/NumberGroupComponent';
-import './main.scss';
+const NumberGroupComponent = require('./components/NumberGroupComponent/NumberGroupComponent');
+require('./main.scss');
 
-export function create(props, container) {
+module.exports.create = (props, container) => {
     const num = new NumberGroupComponent(props);
     num.render(container);
-}
+};
